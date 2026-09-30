@@ -1,0 +1,46 @@
+name: AdminPanel
+version: '${version}'
+
+main: org.domaja.AdminPanel
+api-version: '26.2'
+load: POSTWORLD
+
+commands:
+  moder:
+    description: Toggle moderator mode or open moderator information.
+    usage: /moder <on|off|info>
+    aliases: [moderator]
+    permission: adminpanel.moder
+    permission-message: "§cУ вас нет прав на использование этой команды."
+  apanel:
+    description: Open the admin panel.
+    usage: /apanel
+    aliases: [adminpanel, panel]
+    permission: adminpanel.admin
+    permission-message: "§cУ вас нет прав на открытие админ-панели."
+  proverka:
+    description: Отправить игрока на проверку
+    usage: /proverka <ник>
+  approve:
+    description: Завершить проверку и отпустить игрока
+    usage: /approve <ник>
+  decline:
+    description: Завершить проверку баном
+    usage: /decline <ник> <время> <причина>
+  aura:
+    description: Изменить ауру модератора
+    usage: /aura <модератор> <plus|minus> <1-5>
+  auratop:
+    description: Топ модераторов по ауре
+    usage: /auratop
+  report:
+    description: Отправить репорт модераторам
+    usage: /report <ник|-> <причина>
+
+permissions:
+  adminpanel.admin:
+    description: Access to /apanel, /adminpanel and /panel.
+    default: op
+  adminpanel.moder:
+    description: Access to /moder.
+    default: op

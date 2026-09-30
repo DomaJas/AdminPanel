@@ -1,0 +1,66 @@
+# AdminPanel configuration
+# Paper 26.2 / Java 25
+
+admin-permission: "adminpanel.admin"
+moder-permission: "adminpanel.moder"
+
+moderator-levels:
+  1:
+    display-name: "Модератор I уровня"
+    description: "Базовые инструменты наблюдения и работы с игроками."
+    actions:
+      - "/moder on — включить режим модерации"
+      - "/moder off — выйти из режима модерации"
+      - "/moder info — открыть справочник уровней"
+      - "Наблюдение за игроками"
+      - "Телепортация к игрокам"
+      - "Ваниш"
+  2:
+    display-name: "Модератор II уровня"
+    description: "Расширенные инструменты контроля сервера."
+    actions:
+      - "Все права I уровня"
+      - "/kick <игрок>"
+      - "/mute <игрок>"
+      - "/warn <игрок>"
+      - "Проверка подозрительных игроков"
+  3:
+    display-name: "Модератор III уровня"
+    description: "Старший состав модерации."
+    actions:
+      - "Все права II уровня"
+      - "/ban <игрок>"
+      - "/tempban <игрок> <время>"
+      - "/invsee <игрок>"
+      - "Разбор сложных жалоб"
+  4:
+    display-name: "Старший администратор"
+    description: "Административные действия и контроль модерации."
+    actions:
+      - "Все права III уровня"
+      - "Управление модераторами"
+      - "Админ-панель"
+      - "Экстренные серверные действия"
+
+moder-only-commands:
+  - gamemode
+  - tp
+  - teleport
+  - v
+  - vanish
+
+moder-blocked-commands:
+  - gamemode creative
+  - gamemode c
+  - gamemode 1
+  - execute
+
+check:
+  height: 250
+  platform-radius: 3
+  platform-material: "GLASS"
+  quit-ban-duration: "7d"
+  quit-ban-reason: "Выход с сервера во время проверки"
+
+report:
+  cooldown-minutes: 10
